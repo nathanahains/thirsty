@@ -9,13 +9,13 @@ export const Text = ({
   ...props
 }: TextProps) => {
   return (
-    <StyledButton fontSize={fontSize} content={content} bold={bold} {...props}>
+    <StyledText fontSize={fontSize} content={content} bold={bold} {...props}>
       {content}
-    </StyledButton>
+    </StyledText>
   );
 };
 
-const StyledButton = styled("p")<TextProps>`
+const StyledText = styled("p")<TextProps>`
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => (props.bold ? "bold" : "unset")};
 `;
