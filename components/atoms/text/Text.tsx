@@ -14,13 +14,13 @@ export const Text = ({
   ...props
 }: TextProps) => {
   return (
-      <StyledButton fontSize={fontSize} content={content} bold={bold} {...props}>
+    <StyledButton fontSize={fontSize} content={content} bold={bold} {...props}>
       {content}
     </StyledButton>
   );
 };
 
-const StyledButton = styled("p") <TextProps>`
+const StyledButton = styled("p")<TextProps>`
   font-size: ${(props) => props.fontSize};
-  font-weight: ${(props) => props.bold ? "bold" : "unset"};
+  font-weight: ${(props) => (props.bold ? "bold" : "unset")};
 `;

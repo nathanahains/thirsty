@@ -1,10 +1,10 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import { Text } from './Text';
+import { Text } from "./Text";
 
-export const basicText = <Text content="This is some text"/>
+export const basicText = <Text content="This is some text" />;
 export default {
-  title: 'Text',
+  title: "Text",
   component: Text,
 } as ComponentMeta<typeof Text>;
