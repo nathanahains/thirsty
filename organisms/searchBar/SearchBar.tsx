@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import theme from "../../../theme";
-import ExitIcon from "../../atoms/icon/ExitIcon";
-import SearchIcon from "../../atoms/icon/SearchIcon";
-import TextInput from "../../atoms/input/TextInput";
+import theme from "../../theme";
+import ExitIcon from "../../components/atoms/icon/ExitIcon";
+import SearchIcon from "../../components/atoms/icon/SearchIcon";
+import TextInput from "../../components/atoms/input/TextInput";
 import SearchBarProps from "./interfaces";
 
 const SearchBar = ({ onChange, onClick, value }: SearchBarProps) => {
@@ -15,7 +15,7 @@ const SearchBar = ({ onChange, onClick, value }: SearchBarProps) => {
           <SearchIcon width="15px" height="15px" fill={darkGray} />
         </div>
         <div className="text-input">
-          <TextInput value={value} placeholder="Find a drink"/>
+          <TextInput value={value} onChange={onChange} placeholder="Find a drink"/>
         </div>
         {value && (
           <div className="exit icon" onClick={onClick}>
@@ -31,6 +31,7 @@ export default SearchBar;
 
 const StyledDiv = styled.div`
   padding: 6px;
+  border-bottom: 1px solid ${({borderGray}: {borderGray: string}) => borderGray};
   .search-container {
     height: 20px;
     padding: 5px 6px;
