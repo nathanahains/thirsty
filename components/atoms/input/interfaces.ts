@@ -6,5 +6,6 @@ interface TextInputProps {
   onChange?: () => void;
   backgroundColor?: string;
   autoFocus?: boolean;
+  fontSize?: string;
 }
 export default TextInputProps;

@@ -10,6 +10,7 @@ const TextInput = ({
   border = "none",
   outline = "none",
   autoFocus = true,
+  fontSize="14px",
   ...props
 }: TextInputProps) => {
   return (
@@ -25,7 +26,8 @@ const TextInput = ({
 
 export default TextInput;
 
-const StyledInput = styled("input")<TextInputProps>`
+const StyledInput = styled("input") <TextInputProps>`
+  font-size: ${(props) => props.fontSize};
   background-color: ${(props) => props.backgroundColor};
   background: transparent;
   border: none;
