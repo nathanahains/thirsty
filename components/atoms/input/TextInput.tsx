@@ -10,7 +10,8 @@ const TextInput = ({
   border = "none",
   outline = "none",
   autoFocus = true,
-  fontSize="14px",
+  fontSize = "14px",
+  placeholder = "",
   ...props
 }: TextInputProps) => {
   return (
@@ -19,6 +20,7 @@ const TextInput = ({
       onChange={onChange}
       type="text"
       value={value}
+    placeholder={placeholder}
       {...props}
     ></StyledInput>
   );

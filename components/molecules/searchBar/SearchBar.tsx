@@ -15,7 +15,7 @@ const SearchBar = ({ onChange, onClick, value }: SearchBarProps) => {
           <SearchIcon width="15px" height="15px" fill={darkGray} />
         </div>
         <div className="text-input">
-          <TextInput value={value} />
+          <TextInput value={value} placeholder="Find a drink"/>
         </div>
         {value && (
           <div className="exit icon" onClick={onClick}>

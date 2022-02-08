@@ -7,5 +7,6 @@ interface TextInputProps {
   backgroundColor?: string;
   autoFocus?: boolean;
   fontSize?: string;
+  placeholder?: string;
 }
 export default TextInputProps;
