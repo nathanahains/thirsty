@@ -1,11 +1,6 @@
 import React, { ReactChild } from "react";
 import styled from "styled-components";
-
-interface TextProps {
-  fontSize?: string;
-  bold?: boolean;
-  content: string;
-}
+import TextProps from "./interfaces";
 
 export const Text = ({
   fontSize = "17px",
