@@ -23,7 +23,11 @@ const StyledDiv = styled.div`
     align-items: center;
     height: 60px;
     border-bottom: 1px solid ${({borderGray}: {borderGray: string}) => borderGray};
-    
+    cursor: pointer;
+    transition: 150ms linear all;
+    :hover{
+      background: #fafafa;
+    }
     .image-view{
         margin: 10px 15px 10px 10px;
     }
