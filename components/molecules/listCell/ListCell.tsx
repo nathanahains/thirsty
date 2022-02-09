@@ -5,7 +5,7 @@ import ChevronRight from "../../atoms/icon/ChevronRight";
 import CircleImage from "../../atoms/image/CircleImage";
 import { Text } from "../../atoms/text/Text";
 import ListCellProps from "./interfaces";
-const ListCell = ({ data, onClick }: ListCellProps) => {
+const ListCell = ({ data="", onClick }: ListCellProps) => {
   const { defaultGray, borderGray } = theme.colors;
   const { url, name } = data;
   return (

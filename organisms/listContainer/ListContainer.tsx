@@ -5,8 +5,8 @@ import formatDrinkResponse from "../../components/particles/formatDrinkResponse"
 import ContainerProps from "./interfaces";
 import data from "./seed";
 const ListContainer = ({
-  dataSet = data,
-  cell = <ListCell data={data} />,
+  dataSet=[],
+  cell,
 }: ContainerProps) => {
   return (
     <StyledDiv>
