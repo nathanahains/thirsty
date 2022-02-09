@@ -6,7 +6,7 @@ import { Text } from "../../components/atoms/text/Text";
 import NavigationButton from "../../components/molecules/navigationButton/NavigationButton";
 import theme from "../../theme";
 
-const NavBar = () => {
+const NavBar = ({children}: any) => {
   const router = useRouter();
   const { slug } = router.query;
   const mainText = !slug ? "Thirsty" : slug;
@@ -22,7 +22,10 @@ const NavBar = () => {
       )}
       <div>
         <Text content={`${mainText}`} />
-      </div>
+          </div>
+          <div>
+          {children}
+          </div>
     </StyledDiv>
   );
 };
