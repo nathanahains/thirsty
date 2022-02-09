@@ -1,6 +1,6 @@
 interface ListCellProps {
-    url: string;
-    name: string;
+    // better document this
+    data: any;
     onClick?: () => void;
 }
 

@@ -5,13 +5,20 @@ import ChevronRight from "../../atoms/icon/ChevronRight";
 import CircleImage from "../../atoms/image/CircleImage";
 import { Text } from "../../atoms/text/Text";
 import ListCellProps from "./interfaces";
-const ListCell = ({ url, name, onClick }: ListCellProps) => {
-  const {defaultGray, borderGray} = theme.colors
+const ListCell = ({ data, onClick }: ListCellProps) => {
+  const { defaultGray, borderGray } = theme.colors;
+  const { url, name } = data;
   return (
     <StyledDiv onClick={onClick} borderGray={borderGray}>
-      <div className="image-view"><CircleImage url={url}/></div>
-      <div className="name"><Text content={name}/></div>
-      <div className="chevron-right"><ChevronRight height="15px" width="15px" fill={defaultGray}/></div>
+      <div className="image-view">
+        <CircleImage url={url} />
+      </div>
+      <div className="name">
+        <Text content={name} />
+      </div>
+      <div className="chevron-right">
+        <ChevronRight height="15px" width="15px" fill={defaultGray} />
+      </div>
     </StyledDiv>
   );
 };
@@ -19,20 +26,22 @@ const ListCell = ({ url, name, onClick }: ListCellProps) => {
 export default ListCell;
 
 const StyledDiv = styled.div`
-    display:flex;
-    align-items: center;
-    height: 60px;
-    border-bottom: 1px solid ${({borderGray}: {borderGray: string}) => borderGray};
-    cursor: pointer;
-    transition: 150ms linear all;
-    :hover{
-      background: #fafafa;
-    }
-    .image-view{
-        margin: 10px 15px 10px 10px;
-    }
-    .chevron-right{
-        margin-left: auto;
-        margin-right: 10px;
-    }
+  display: flex;
+  align-items: center;
+  height: 60px;
+  border-bottom: 1px solid
+    ${({ borderGray }: { borderGray: string }) => borderGray};
+  cursor: pointer;
+  transition: 150ms linear all;
+  :hover {
+    background: #fafafa;
+  }
+  .image-view {
+    display: flex;
+    margin: 10px 15px 10px 10px;
+  }
+  .chevron-right {
+    margin-left: auto;
+    margin-right: 10px;
+  }
 `;
