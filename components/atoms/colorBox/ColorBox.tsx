@@ -10,6 +10,7 @@ export default ColorBox;
 
 const StyledDiv = styled.div`
   min-width: 20px;
+  max-width: 20px;
   height: 20px;
   border-radius: 3px;
   background-color: ${({ color }: { color: string }) => color};
