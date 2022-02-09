@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import styled from "styled-components";
 import theme from "../../../theme";
@@ -5,21 +6,23 @@ import ChevronRight from "../../atoms/icon/ChevronRight";
 import CircleImage from "../../atoms/image/CircleImage";
 import { Text } from "../../atoms/text/Text";
 import ListCellProps from "./interfaces";
-const ListCell = ({ data="", onClick }: ListCellProps) => {
+const ListCell = ({ data = "", onClick }: ListCellProps) => {
   const { defaultGray, borderGray } = theme.colors;
-  const { url, name } = data;
+  const { url, name, slug } = data;
   return (
-    <StyledDiv onClick={onClick} borderGray={borderGray}>
-      <div className="image-view">
-        <CircleImage url={url} />
-      </div>
-      <div className="name">
-        <Text content={name} />
-      </div>
-      <div className="chevron-right">
-        <ChevronRight height="15px" width="15px" fill={defaultGray} />
-      </div>
-    </StyledDiv>
+    <Link href={`/drink/${slug}`} passHref>
+      <StyledDiv onClick={onClick} borderGray={borderGray}>
+        <div className="image-view">
+          <CircleImage url={url} />
+        </div>
+        <div className="name">
+          <Text content={name} />
+        </div>
+        <div className="chevron-right">
+          <ChevronRight height="15px" width="15px" fill={defaultGray} />
+        </div>
+      </StyledDiv>
+    </Link>
   );
 };
 

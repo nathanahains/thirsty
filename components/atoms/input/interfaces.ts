@@ -3,7 +3,7 @@ interface TextInputProps {
   border?: string;
   outline?: string;
   value: string;
-  onChange?: () => void;
+  onChange?: any;
   backgroundColor?: string;
   autoFocus?: boolean;
   fontSize?: string;

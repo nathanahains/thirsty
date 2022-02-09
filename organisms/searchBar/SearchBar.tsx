@@ -33,7 +33,7 @@ const StyledDiv = styled.div`
   padding: 6px;
   border-bottom: 1px solid ${({borderGray}: {borderGray: string}) => borderGray};
   .search-container {
-    height: 20px;
+    height: 25px;
     padding: 5px 6px;
     display: flex;
     align-items: center;
@@ -49,5 +49,8 @@ const StyledDiv = styled.div`
   .exit {
     margin-left: auto;
     cursor: pointer;
+  }
+  .text-input{
+    width: 100%;
   }
 `;

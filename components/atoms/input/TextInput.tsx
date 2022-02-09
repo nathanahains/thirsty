@@ -34,4 +34,5 @@ const StyledInput = styled("input") <TextInputProps>`
   background: transparent;
   border: none;
   outline: none;
+  width: 100%;
 `;
