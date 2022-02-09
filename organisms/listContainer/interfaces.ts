@@ -1,8 +1,9 @@
-import { ReactElement} from "react";
+import { ReactElement } from "react";
 
 interface ContainerProps {
-    dataSet?: any;
-    cell: ReactElement;
+  // better document this
+  dataSet?: any;
+  cell: ReactElement;
 }
 
-export default ContainerProps
+export default ContainerProps;
