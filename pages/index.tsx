@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import { ChangeEvent, useEffect, useState } from "react";
 import styled from "styled-components";
+import Loader from "../components/atoms/icon/Loader";
 import { Text } from "../components/atoms/text/Text";
 import ListCell from "../components/molecules/listCell/ListCell";
 import formatDrinkResponse from "../components/particles/formatDrinkResponse";
@@ -12,10 +13,13 @@ const Home: NextPage = () => {
   const [data, setData] = useState([]);
   const [value, setValue] = useState("");
   const [noResults, setNoResults] = useState(false);
+  const [loading, setloading] = useState(false);
   useEffect(() => {
     noResults && setNoResults(false);
     const startGetDrinks = async () => {
+      setloading(true);
       const [response, ok] = await fetchDrinks(value);
+
       if (ok) {
         if (response.drinks) setData(formatDrinkResponse(response.drinks));
         else {
@@ -23,10 +27,12 @@ const Home: NextPage = () => {
           setNoResults(true);
         }
       }
+
+      setloading(false);
     };
     value !== "" && startGetDrinks();
   }, [value]);
-  console.log(data);
+
   const handleSearchChange = (newValue: string) => {
     setValue(newValue);
   };
@@ -34,8 +40,8 @@ const Home: NextPage = () => {
     setValue("");
     setData([]);
   };
-  const validData = value && !noResults;
-  const welcome = !validData && !noResults;
+  const validData = value && !noResults && !loading;
+  const welcome = !validData && !noResults && !loading;
   return (
     <StyledDiv>
       <SearchBar
@@ -46,14 +52,18 @@ const Home: NextPage = () => {
         value={value}
       />
       {welcome && (
-        <div className="display-text">
+        <div className="display">
           <Text content="Thirsty? Find a drink!" />
         </div>
       )}
-      
+      {loading && (
+        <div className="display">
+          <Loader width="20px" height="20px" />
+        </div>
+      )}
       {validData && <ListContainer dataSet={data} cell={<ListCell />} />}
       {noResults && (
-        <div className="display-text">
+        <div className="display">
           <Text content="No results" />
         </div>
       )}
@@ -64,8 +74,9 @@ const Home: NextPage = () => {
 export default Home;
 
 const StyledDiv = styled.div`
-  .display-text {
+  .display {
     margin-top: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 `;
