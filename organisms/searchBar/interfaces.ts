@@ -1,6 +1,6 @@
 interface SearchBarProps {
     onClick?: () => void;
-    onChange?: () => void;
+    onChange?: any;
     value: string;
 }
 
