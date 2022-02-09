@@ -35,10 +35,9 @@ const StyledDiv = styled.div`
   border-radius: 4px;
   width: fit-content;
   :hover {
-    background: #f5f8ff;
+    opacity: .8;
   }
   .button-text {
     margin: 0px 4px;
-    color: ;
   }
 `;
