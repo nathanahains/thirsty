@@ -4,7 +4,8 @@ import ColorBox from "../../atoms/colorBox/ColorBox";
 import { Text } from "../../atoms/text/Text";
 import LegendCellProps from "./interfaces";
 
-const LegendCell = ({ color = "red", name, value }: LegendCellProps) => {
+const LegendCell = ({ data }: LegendCellProps) => {
+    const { color = "red", name, value } = data
   return (
     <StyledDiv color={color}>
       <ColorBox color={color} />

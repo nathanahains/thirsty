@@ -14,7 +14,9 @@ const Template: ComponentStory<typeof LegendCell> = (args: any) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
+  data: {
     color: "red",
     name: "Orange Juice",
     value: "1 oz",
+  },
 };

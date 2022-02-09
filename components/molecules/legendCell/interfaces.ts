@@ -1,7 +1,6 @@
 interface LegendCellProps {
-    color: string,
-    name: string,
-    value: string
+  // better document this
+  data: any;
 }
 
-export default LegendCellProps
+export default LegendCellProps;
