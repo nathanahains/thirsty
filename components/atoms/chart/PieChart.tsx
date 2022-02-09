@@ -11,7 +11,6 @@ import PieChartProps from "./interfaces";
 const CustomPieChart = ({ dataSet, width=120, height=120}: PieChartProps) => {
   // change this to object in case arrangement changes
     const formattedData = filterByValidValues(dataSet).map((data: any) => {
-      console.log(data)
     const name = data[0];
     const color = data[2];
     const splitValue = splitTrimData(data[1]);
