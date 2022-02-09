@@ -1,24 +1,27 @@
 import type { NextPage } from "next";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useContext, useEffect, useState } from "react";
 import styled from "styled-components";
 import Loader from "../components/atoms/icon/Loader";
 import { Text } from "../components/atoms/text/Text";
 import ListCell from "../components/molecules/listCell/ListCell";
 import formatDrinkResponse from "../components/particles/formatDrinkResponse";
+import AppContext from "../context";
 import ListContainer from "../organisms/listContainer/ListContainer";
 import SearchBar from "../organisms/searchBar/SearchBar";
 import { fetchDrinks } from "./api/fetchDrinks";
 
 const Home: NextPage = () => {
-  const [data, setData] = useState([]);
-  const [value, setValue] = useState("");
+  const value = useContext(AppContext);
+  const { data, setData } = value;
+
+  const [searchValue, setSearchValue] = useState("");
   const [noResults, setNoResults] = useState(false);
   const [loading, setloading] = useState(false);
   useEffect(() => {
     noResults && setNoResults(false);
     const startGetDrinks = async () => {
       setloading(true);
-      const [response, ok] = await fetchDrinks(value);
+      const [response, ok] = await fetchDrinks(searchValue);
 
       if (ok) {
         if (response.drinks) setData(formatDrinkResponse(response.drinks));
@@ -30,17 +33,17 @@ const Home: NextPage = () => {
 
       setloading(false);
     };
-    value !== "" && startGetDrinks();
-  }, [value]);
+    searchValue !== "" && startGetDrinks();
+  }, [searchValue]);
 
   const handleSearchChange = (newValue: string) => {
-    setValue(newValue);
+    setSearchValue(newValue);
   };
   const handleSearchClear = () => {
-    setValue("");
+    setSearchValue("");
     setData([]);
   };
-  const validData = value && !noResults && !loading;
+  const validData = searchValue && !noResults && !loading;
   const welcome = !validData && !noResults && !loading;
   return (
     <StyledDiv>
@@ -49,7 +52,7 @@ const Home: NextPage = () => {
           handleSearchChange(e.target.value)
         }
         onClick={handleSearchClear}
-        value={value}
+        value={searchValue}
       />
       {welcome && (
         <div className="display">
