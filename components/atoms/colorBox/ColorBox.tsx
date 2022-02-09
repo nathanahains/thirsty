@@ -9,7 +9,7 @@ const ColorBox = ({ color }: ColorBoxProps) => {
 export default ColorBox;
 
 const StyledDiv = styled.div`
-  width: 20px;
+  min-width: 20px;
   height: 20px;
   border-radius: 3px;
   background-color: ${({ color }: { color: string }) => color};

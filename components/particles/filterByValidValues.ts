@@ -1,4 +1,4 @@
-const filterByValidValues = (set: {[key: number]: any}) =>
-  Object.values(set).filter((data) => !!data && data.includes(null) !== true)
+const filterByValidValues = (set: any[]) =>
+  set.filter((data) => !!data)
 
 export default filterByValidValues;

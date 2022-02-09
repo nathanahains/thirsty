@@ -18,4 +18,6 @@ export const Text = ({
 const StyledText = styled("p")<TextProps>`
   font-size: ${(props) => props.fontSize};
   font-weight: ${(props) => (props.bold ? "bold" : "unset")};
+  margin:0;
+  overflow-wrap;
 `;

@@ -1,19 +1,25 @@
-const data = {
-  "1": ["Tequila", "1 1/2 oz ", "red"],
-  "2": ["Triple sec", "1/2 oz ", "blue"],
-  "3": ["Lime juice", "1 oz ", "green"],
-  "4": ["Salt", null],
-  "5": null,
-  "6": null,
-  "7": null,
-  "8": null,
-  "9": null,
-  "10": null,
-  "11": null,
-  "12": null,
-  "13": null,
-  "14": null,
-  "15": null,
-};
+const data = [
+  { name: "Tequila", value: "1 1/2 oz ", color: "red"},
+  {
+    name: "Triple sec",
+    value: "1/2 oz ",
+    color: "blue"
+  },
+  {
+    name: "Lime juice",
+    value: "1 oz ",
+    color: "green"
+  },
+  {
+    name: "Salt",
+    value: null,
+    color: "yellow"
+  },
+  {
+    name: null,
+    value: null,
+    color: "orange"
+  },
+];
 
-export default data
+export default data;
