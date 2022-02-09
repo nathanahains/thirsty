@@ -1,3 +1,5 @@
+import convertToSlug from "./convertToSlug";
+
 const joinIngredientsToMeasurements = (dataObj: any) => {
   const ingredientConversionObj: any = {};
   const extractNumberFromKey = (key: string) => key.replace(/^\D+/g, "");
@@ -30,6 +32,7 @@ const formatDrinkResponse = (data: any) => {
     }) => {
       return {
         name: dataObj.strDrink || "N/A",
+        slug: convertToSlug(dataObj.strDrink),
         url: dataObj.strDrinkThumb || "",
         instructions: dataObj.strInstructions || "",
         ingredients: joinIngredientsToMeasurements(dataObj) || [],
