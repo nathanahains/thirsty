@@ -4,6 +4,6 @@ import SearchIcon from "./SearchIcon";
 
 export const searchIcon = <SearchIcon />;
 export default {
-  title: "Icon",
+  title: "atoms/Icon",
   component: SearchIcon,
 } as ComponentMeta<typeof SearchIcon>;

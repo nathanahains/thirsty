@@ -5,7 +5,7 @@ import IngredientVisual from "./IngredientVisual";
 import data from "./seed";
 
 export default {
-  title: "Ingredient Visual",
+  title: "organisms/Ingredient Visual",
   component: IngredientVisual,
 } as ComponentMeta<typeof IngredientVisual>;
 

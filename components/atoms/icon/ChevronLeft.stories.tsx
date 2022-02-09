@@ -5,6 +5,6 @@ import ChevronLeft from './ChevronLeft';
 
 export const chevronLeft = <ChevronLeft/>
 export default {
-  title: 'Icon',
+  title: 'atoms/Icon',
   component: ChevronLeft,
 } as ComponentMeta<typeof ChevronLeft>;

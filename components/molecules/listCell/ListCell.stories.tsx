@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ListCell from "./ListCell";
 
 export default {
-  title: "ListCell",
+  title: "molecules/List Cell",
   component: ListCell,
 } as ComponentMeta<typeof ListCell>;
 

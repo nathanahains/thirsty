@@ -6,7 +6,7 @@ import data from "./seed";
 import ListCell from "../../components/molecules/listCell/ListCell";
 
 export default {
-  title: "List Container",
+  title: "organisms/List Container",
   component: ListContainer,
 } as ComponentMeta<typeof ListContainer>;
 

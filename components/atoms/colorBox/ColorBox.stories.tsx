@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import ColorBox from "./ColorBox";
 
 export default {
-  title: "Color Box",
+  title: "atoms/Color Box",
   component: ColorBox,
 } as ComponentMeta<typeof ColorBox>;
 

@@ -5,7 +5,7 @@ import data from "./seed";
 
 
 export default {
-  title: "Pie Chart",
+  title: "atoms/Pie Chart",
   component: CustomPieChart,
 } as ComponentMeta<typeof CustomPieChart>;
 

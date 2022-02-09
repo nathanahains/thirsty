@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import LegendCell from "./LegendCell";
 
 export default {
-  title: "LegendCell",
+  title: "molecules/Legend Cell",
   component: LegendCell,
 } as ComponentMeta<typeof LegendCell>;
 

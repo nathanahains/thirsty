@@ -5,6 +5,6 @@ import SearchBar from "./SearchBar";
 
 export const searchBar = <SearchBar value=""/>;
 export default {
-  title: "Search Bar",
+  title: "organisms/Search Bar",
   component: SearchBar,
 } as ComponentMeta<typeof SearchBar>;

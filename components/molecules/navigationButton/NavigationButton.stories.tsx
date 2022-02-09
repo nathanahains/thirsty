@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import NavigationButton from "./NavigationButton";
 
 export default {
-  title: "Navigation Button",
+  title: "molecules/Navigation Button",
   component: NavigationButton,
 } as ComponentMeta<typeof NavigationButton>;
 

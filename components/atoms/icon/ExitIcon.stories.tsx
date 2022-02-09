@@ -4,6 +4,6 @@ import ExitIcon from "./ExitIcon";
 
 export const exitIcon = <ExitIcon />;
 export default {
-  title: "Icon",
+  title: "atoms/Icon",
   component: ExitIcon,
 } as ComponentMeta<typeof ExitIcon>;

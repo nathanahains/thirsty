@@ -4,6 +4,6 @@ import CircleImage from "./CircleImage";
 
 export const circleImage = <CircleImage url=""/>;
 export default {
-  title: "Image",
+  title: "atoms/Image",
   component: CircleImage,
 } as ComponentMeta<typeof CircleImage>;
