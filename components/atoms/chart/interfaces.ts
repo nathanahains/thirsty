@@ -1,6 +1,6 @@
 interface PieChartProps {
     // better document this
-    dataSet?: any;
+    dataSet: any;
     width?: number;
     height?: number
 }

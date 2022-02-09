@@ -3,19 +3,19 @@ const joinIngredientsToMeasurements = (dataObj: any) => {
   const extractNumberFromKey = (key: string) => key.replace(/^\D+/g, "");
   const isExtractedNumberInObj = (key: string) =>
     ingredientConversionObj[extractNumberFromKey(key)];
+  
   Object.keys(dataObj).map((key: string) => {
     // checks if a previous iteration has matching number
     if (isExtractedNumberInObj(key)) {
-      // if so, joins the two values together for the correct combination
-      ingredientConversionObj[key.replace(/^\D+/g, "")] = [
-        ingredientConversionObj[key.replace(/^\D+/g, "")],
-        dataObj[key],
-      ];
+      // if so, adds the matching name to the object
+      ingredientConversionObj[key.replace(/^\D+/g, "")].value =  dataObj[key]
     } else {
       // else, validates the key is without any numbers
       if (extractNumberFromKey(key) !== "")
-        // if so, adds the key/value to the object
-        ingredientConversionObj[key.replace(/^\D+/g, "")] = dataObj[key];
+        // if so, adds the value to the object
+        ingredientConversionObj[key.replace(/^\D+/g, "")] = {
+          name: dataObj[key]
+        };
     }
   });
   return ingredientConversionObj;
