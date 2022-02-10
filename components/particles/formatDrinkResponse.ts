@@ -1,5 +1,6 @@
 import convertToSlug from "./convertToSlug";
 
+
 const joinIngredientsToMeasurements = (dataObj: any) => {
   const ingredientConversionObj: any = {};
   const extractNumberFromKey = (key: string) => key.replace(/^\D+/g, "");
@@ -12,7 +13,7 @@ const joinIngredientsToMeasurements = (dataObj: any) => {
       // if so, adds the matching name to the object
       ingredientConversionObj[key.replace(/^\D+/g, "")].value =  dataObj[key]
     } else {
-      // else, validates the key is without any numbers
+      // else, validates the key is without any numbers 
       if (extractNumberFromKey(key) !== "")
         // if so, adds the value to the object
         ingredientConversionObj[key.replace(/^\D+/g, "")] = {
@@ -20,7 +21,7 @@ const joinIngredientsToMeasurements = (dataObj: any) => {
         };
     }
   });
-  return ingredientConversionObj;
+  return Object.values(ingredientConversionObj).filter((obj:any)=> obj.name);
 };
 
 const formatDrinkResponse = (data: any) => {
@@ -30,9 +31,10 @@ const formatDrinkResponse = (data: any) => {
       strDrinkThumb: string;
       strInstructions: string;
     }) => {
+      console.log(joinIngredientsToMeasurements(dataObj))
       return {
         name: dataObj.strDrink || "N/A",
-        slug: convertToSlug(dataObj.strDrink),
+        slug: convertToSlug(dataObj.strDrink) || "",
         url: dataObj.strDrinkThumb || "",
         instructions: dataObj.strInstructions || "",
         ingredients: joinIngredientsToMeasurements(dataObj) || [],
