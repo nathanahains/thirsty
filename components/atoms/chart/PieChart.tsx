@@ -9,7 +9,7 @@ import splitTrimData from "../../particles/splitTrimData";
 import PieChartProps from "./interfaces";
 
 const CustomPieChart = ({
-  dataSet,
+  dataSet=[],
   width = 120,
   height = 120,
 }: PieChartProps) => {
