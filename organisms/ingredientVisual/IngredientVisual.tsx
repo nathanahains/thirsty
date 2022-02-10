@@ -7,11 +7,10 @@ import genPastelColor from "../../components/particles/genPastelColor";
 import ListContainer from "../listContainer/ListContainer";
 import IngredientVisualProps, { IngredientItem } from "./interfaces";
 
-const IngredientVisual = ({ ingredients }: IngredientVisualProps) => {
-  ingredients?.forEach((obj: IngredientItem) => {
+const IngredientVisual = ({ ingredients = [] }: IngredientVisualProps) => {
+  Object.values(ingredients)?.forEach((obj: IngredientItem) => {
     obj.color = genPastelColor();
   });
-
   return (
     <StyledDiv>
       <div className="main-text">
