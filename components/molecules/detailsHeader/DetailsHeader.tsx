@@ -35,5 +35,6 @@ const StyledDiv = styled.div`
   }
   .details-text {
     margin-top: 20px;
+    text-align: center;
   }
 `;

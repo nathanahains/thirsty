@@ -4,21 +4,20 @@ import React from "react";
 import styled from "styled-components";
 import { Text } from "../../components/atoms/text/Text";
 import NavigationButton from "../../components/molecules/navigationButton/NavigationButton";
+import reverseSlug from "../../components/particles/reverseSlug";
 import theme from "../../theme";
 
 const NavBar = ({ children }: any) => {
   const router = useRouter();
-  const { slug } = router.query;
-  const mainText = !slug ? "Thirsty" : slug;
+  const { slug }: {slug?: string} = router.query;
+  const mainText = !slug ? "Thirsty" : reverseSlug(slug);
   const { defaultGray, borderGray } = theme.colors;
   return (
     <>
       <StyledDiv defaultGray={defaultGray}>
         {slug && (
           <div className="left-button">
-            <Link href="/" passHref>
               <NavigationButton position="left" />
-            </Link>
           </div>
         )}
         <div>
