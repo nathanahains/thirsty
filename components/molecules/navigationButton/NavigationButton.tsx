@@ -5,23 +5,27 @@ import ChevronRight from "../../atoms/icon/ChevronRight";
 import { Text } from "../../atoms/text/Text";
 import NavigationButtonProps from "./interfaces";
 import theme from "../../../theme";
+import Link from "next/link";
 const NavigationButton = ({
   position = "none",
   content = "Thirsty",
+  route = "/"
 }: NavigationButtonProps) => {
   const { vibrantBlue } = theme.colors;
   return (
-    <StyledDiv>
-      {position === "left" && (
-        <ChevronLeft height="20px" width="20px" fill={vibrantBlue} />
-      )}
-      <div className="button-text">
-        <Text content={content} color={vibrantBlue}></Text>
-      </div>
-      {position === "right" && (
-        <ChevronRight height="20px" width="20px" fill={vibrantBlue} />
-      )}
-    </StyledDiv>
+    <Link href={route} passHref>
+      <StyledDiv>
+        {position === "left" && (
+          <ChevronLeft height="20px" width="20px" fill={vibrantBlue} />
+        )}
+        <div className="button-text">
+          <Text content={content} color={vibrantBlue}></Text>
+        </div>
+        {position === "right" && (
+          <ChevronRight height="20px" width="20px" fill={vibrantBlue} />
+        )}
+      </StyledDiv>
+    </Link>
   );
 };
 
@@ -35,7 +39,7 @@ const StyledDiv = styled.div`
   border-radius: 4px;
   width: fit-content;
   :hover {
-    opacity: .8;
+    opacity: 0.8;
   }
   .button-text {
     margin: 0px 4px;
