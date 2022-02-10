@@ -8,7 +8,7 @@ import ListContainer from "../listContainer/ListContainer";
 import IngredientVisualProps, { IngredientItem } from "./interfaces";
 
 const IngredientVisual = ({ ingredients = [] }: IngredientVisualProps) => {
-  Object.values(ingredients)?.forEach((obj: IngredientItem) => {
+  ingredients?.forEach((obj: IngredientItem) => {
     obj.color = genPastelColor();
   });
   return (
